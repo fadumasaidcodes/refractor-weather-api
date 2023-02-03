@@ -14,10 +14,12 @@ $(document).ready(function() {
         type: "GET",
         url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`,
         dataType: "json",
+    
         success: function(data) {
           weatherData = data;
           localStorage.setItem(city, JSON.stringify(data));
           displayWeather();
+          console.log(weatherData)
         }
       });
     } else {
